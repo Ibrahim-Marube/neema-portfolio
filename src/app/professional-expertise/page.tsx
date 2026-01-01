@@ -26,6 +26,7 @@ export default function ProfessionalExpertise() {
     }
   ];
 
+
   const skills = [
     {
       title: 'Data Analysis & Insights',
@@ -53,10 +54,12 @@ export default function ProfessionalExpertise() {
     }
   ];
 
+
   return (
     <div className="section-padding">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-5xl font-bold text-center mb-16">Professional Expertise</h1>
+
 
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-8">Core Expertise</h2>
@@ -74,6 +77,7 @@ export default function ProfessionalExpertise() {
           </div>
         </section>
 
+
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-8">Skills & Capabilities</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -89,6 +93,7 @@ export default function ProfessionalExpertise() {
             ))}
           </div>
         </section>
+
 
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-8">Languages</h2>
@@ -108,15 +113,16 @@ export default function ProfessionalExpertise() {
           </div>
         </section>
 
+
         <section>
           <h2 className="text-3xl font-bold mb-8">Education & Certifications</h2>
           <div className="space-y-6">
             <div className="card">
               <h3 className="text-xl font-bold text-primary-navy dark:text-white mb-2">
-                Master of Arts | International Marketing & Media Management
+                BSc | International Business Administration - Information Systems Management
               </h3>
               <p className="text-primary-teal dark:text-dark-teal">
-                Media University of Applied Science Berlin, Germany
+                United States International University
               </p>
             </div>
             <div className="card">
@@ -129,10 +135,10 @@ export default function ProfessionalExpertise() {
             </div>
             <div className="card">
               <h3 className="text-xl font-bold text-primary-navy dark:text-white mb-2">
-                BSc | International Business Administration - Information Systems Management
+                Master of Arts | International Marketing & Media Management
               </h3>
               <p className="text-primary-teal dark:text-dark-teal">
-                United States International University
+                Media University of Applied Science Berlin, Germany
               </p>
             </div>
             <div className="card">

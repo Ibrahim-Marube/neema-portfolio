@@ -80,13 +80,13 @@ export default function AboutSection() {
           <div className="h-1 w-20 bg-gradient-to-r from-primary-teal to-primary-navy rounded-full mx-auto" />
         </div>
 
-        {/* Lower grid: quote + cards + stats */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
-          {/* Left: quote + intro */}
+        {/* Single column layout for better balance */}
+        <div className="max-w-5xl mx-auto space-y-8">
+          {/* Quote + intro */}
           <div className="space-y-6">
             <blockquote className="relative pl-4 sm:pl-5 border-l-2 border-primary-teal/70 dark:border-dark-teal/70">
               <span className="absolute -top-3 left-1 text-4xl text-primary-teal/20 select-none">
-                “
+                "
               </span>
               <p className="text-base sm:text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
                 Technology is only successful when people understand it, trust it, and can use it to make better decisions every day.
@@ -94,57 +94,54 @@ export default function AboutSection() {
             </blockquote>
 
             <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300">
-              Neema works at the intersection of business, technology, and people, helping organizations translate strategy into practical digital solutions.
+              I work at the intersection of business, technology, and people, helping organizations translate strategy into practical digital solutions.
             </p>
           </div>
 
-          {/* Right: cards + stats */}
-          <div className="space-y-8">
-            {/* Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-              {aboutItems.map((item) => (
-                <div
-                  key={item.title}
-                  className="group rounded-xl border border-gray-100 dark:border-white/10 bg-white/80 dark:bg-dark-card/80 backdrop-blur-sm p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
-                >
-                  <div className="flex items-start gap-3 sm:gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-primary-teal/10 dark:bg-dark-teal/10 flex items-center justify-center text-primary-teal dark:text-dark-teal">
-                      {item.icon}
-                    </div>
-                    <div>
-                      <h3 className="text-sm sm:text-base font-semibold text-primary-navy dark:text-white mb-1.5">
-                        {item.title}
-                      </h3>
-                      <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                        {item.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Stats row */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5">
-              {stats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="rounded-xl border border-gray-100 dark:border-white/10 bg-white/80 dark:bg-dark-card/80 backdrop-blur-sm p-4 sm:p-5 flex items-center gap-3"
-                >
-                  <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-primary-teal/10 dark:bg-dark-teal/10 flex items-center justify-center text-primary-teal dark:text-dark-teal">
-                    {stat.icon}
+          {/* Cards grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            {aboutItems.map((item) => (
+              <div
+                key={item.title}
+                className="group rounded-xl border border-gray-100 dark:border-white/10 bg-white/80 dark:bg-dark-card/80 backdrop-blur-sm p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div className="flex flex-col items-start gap-3">
+                  <div className="flex-shrink-0 w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-primary-teal/10 dark:bg-dark-teal/10 flex items-center justify-center text-primary-teal dark:text-dark-teal">
+                    {item.icon}
                   </div>
                   <div>
-                    <p className="text-lg sm:text-xl font-bold text-primary-navy dark:text-white leading-tight">
-                      {stat.value}
-                    </p>
-                    <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300">
-                      {stat.label}
+                    <h3 className="text-sm sm:text-base font-semibold text-primary-navy dark:text-white mb-1.5">
+                      {item.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                      {item.description}
                     </p>
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Stats row */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 max-w-3xl mx-auto">
+            {stats.map((stat) => (
+              <div
+                key={stat.label}
+                className="rounded-xl border border-gray-100 dark:border-white/10 bg-white/80 dark:bg-dark-card/80 backdrop-blur-sm p-4 sm:p-5 flex items-center gap-3"
+              >
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-primary-teal/10 dark:bg-dark-teal/10 flex items-center justify-center text-primary-teal dark:text-dark-teal">
+                  {stat.icon}
+                </div>
+                <div>
+                  <p className="text-lg sm:text-xl font-bold text-primary-navy dark:text-white leading-tight">
+                    {stat.value}
+                  </p>
+                  <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300">
+                    {stat.label}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

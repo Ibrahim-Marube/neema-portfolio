@@ -7,11 +7,11 @@ export const caseStudies: CaseStudy[] = [
     role: 'Lead Business Analyst & Information Systems Manager',
     challenge: 'Inefficient hospital workflows caused long patient wait times, delayed service delivery, and operational bottlenecks, impacting staff performance and patient satisfaction.',
     solution: [
-      'Redesigned hospital processes to reduce cycle time and improve operational efficiency',
-      'Implemented real-time process monitoring and performance metrics to guide executive decisions',
-      'Facilitated cross-functional workshops and stakeholder alignment for seamless implementation',
-      'Introduced a hybrid Waterfall-Agile methodology to enable rapid iterative improvements',
-      'Provided strategic guidance to leadership on technology adoption and system enhancements'
+      'Redesigned end-to-end patient workflows through structured process analysis and reengineering, eliminating bottlenecks and streamlining service delivery across departments',
+      'Provided strategic guidance to leadership on technology adoption and system enhancements, translating operational challenges into prioritized digital initiatives and high-impact investment decisions',
+      'Led in the Development of standardized operating procedures and role clarity, improving staff coordination, accountability, and overall productivity',
+      'Established performance measurement and governance frameworks, defining KPIs and monitoring outcomes to ensure sustained operational and service improvements',
+      'Drove cross-functional change and stakeholder alignment, facilitating executive workshops and decision forums to ensure adoption, accountability, and long-term success'
     ],
     results: [
       '25% reduction in process cycle time within a year',
@@ -32,11 +32,11 @@ export const caseStudies: CaseStudy[] = [
     role: 'Digital Marketing & Media Analyst',
     challenge: 'The organization sought to increase SEO visibility, online engagement, and conversion rates, while ensuring data-driven decision-making across marketing teams.',
     solution: [
-      'Led end-to-end performance analysis to identify trends and optimize marketing strategy',
-      'Planned and executed omnichannel campaigns, improving engagement and conversions',
-      'Created newsletter articles, thought leadership content, and email campaigns',
-      'Collaborated with creative and analytical teams to align marketing initiatives',
-      'Provided data-driven recommendations and A/B testing strategies to maximize ROI'
+      'Established a performance-led marketing intelligence approach by integrating SEO, web analytics, and conversion data into a single decision framework, enabling leadership to prioritize high-impact channels and initiatives',
+      'Redefined content and channel strategy using audience and search insights, ensuring marketing efforts directly addressed user intent, improved visibility in priority search areas, and increased meaningful engagement',
+      'Implemented data-driven campaign optimization cycles, using continuous performance review to refine messaging, targeting, and channel mix, driving measurable improvements in engagement and conversions',
+      'Translated analytics into executive-ready insights and narratives, equipping marketing leaders with clear recommendations to guide investment decisions, creative direction, and growth initiatives',
+      'Built a culture of evidence-based marketing decision-making, aligning teams around shared metrics, accountability, and performance goals to sustain long-term digital growth'
     ],
     results: [
       '25% increase in SEO visibility and 15% growth in organic traffic',
@@ -54,17 +54,17 @@ export const caseStudies: CaseStudy[] = [
     id: 'strategic-planning',
     title: 'Strategic Hospital Policy & Planning',
     role: 'Business Strategist',
-    challenge: 'The hospital needed comprehensive strategies and policies aligned with SDGs and Africa Agenda to improve operational efficiency, optimize resources, and strengthen organizational mission.',
+    challenge: 'The hospital needed comprehensive strategies and policies aligned with SDGs and Africa Agenda 2063 to improve operational efficiency, optimize resources, and strengthen organizational mission.',
     solution: [
       'Conducted market and competitor analysis to identify growth opportunities',
       'Developed hospital strategies and policies driving actionable recommendations',
-      'Contributed to 2023-2028 hospital strategic plan aligned with SDGs and Africa Agenda',
+      'Contributed to 2023-2028 hospital strategic plan aligned with SDGs and Africa Agenda 2063',
       'Established KPIs to track strategy effectiveness and enable informed decisions',
       'Collaborated with cross-functional teams to validate strategic initiatives'
     ],
     results: [
       '20% improvement in operational efficiency through strategy-informed interventions',
-      'Successfully aligned hospital initiatives with SDGs and Africa Agenda objectives',
+      'Successfully aligned hospital initiatives with SDGs and Africa Agenda 2063 objectives',
       'Enabled leadership to make data-driven, actionable strategic decisions'
     ],
     tools: ['Balanced Scorecards', 'SWOT Analysis', 'PESTEL Analysis', 'OKRs', 'Power BI'],
