@@ -201,10 +201,12 @@ export default function ProfessionalExpertise() {
               </div>
               
               <div className="relative">
+                {/* Gradient overlays for fade effect (desktop only) */}
                 <div className="hidden sm:block absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white dark:from-dark-bg to-transparent z-10 pointer-events-none"></div>
                 <div className="hidden sm:block absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white dark:from-dark-bg to-transparent z-10 pointer-events-none"></div>
                 
-                <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-primary-teal/40 scrollbar-track-transparent">
+                {/* Horizontal scroll container - auto scroll, scrollbar hidden */}
+                <div className="overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none]">
                   <div className="flex gap-3 sm:gap-4 py-2 px-1 animate-scroll-fast">
                     {[...tools, ...tools].map((tool, idx) => (
                       <div
@@ -267,56 +269,60 @@ export default function ProfessionalExpertise() {
                   Academic foundation and professional credentials
                 </p>
               </div>
-              
-              <div className="space-y-5 sm:space-y-6 max-w-4xl mx-auto">
-                <div className="card hover:shadow-lg transition-all duration-300 border-l-4 border-primary-teal">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary-teal/10 dark:bg-dark-teal/10 flex items-center justify-center text-primary-teal dark:text-dark-teal font-bold text-sm sm:text-base">
-                      BSc
+
+              <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+                {/* Degrees */}
+                <div className="space-y-4">
+                  <div className="card hover:shadow-lg transition-all duration-300 border-l-4 border-primary-teal">
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary-teal/10 dark:bg-dark-teal/10 flex items-center justify-center text-primary-teal dark:text-dark-teal font-bold text-sm sm:text-base">
+                        BSc
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-base sm:text-lg font-bold text-primary-navy dark:text-white mb-1.5">
+                          International Business Administration - Information Systems Management
+                        </h3>
+                        <p className="text-sm sm:text-base text-primary-teal dark:text-dark-teal">
+                          United States International University
+                        </p>
+                      </div>
                     </div>
-                    <div className="flex-1">
-                      <h3 className="text-base sm:text-lg font-bold text-primary-navy dark:text-white mb-1.5">
-                        International Business Administration - Information Systems Management
-                      </h3>
-                      <p className="text-sm sm:text-base text-primary-teal dark:text-dark-teal">
-                        United States International University
-                      </p>
+                  </div>
+
+                  <div className="card hover:shadow-lg transition-all duration-300 border-l-4 border-primary-teal">
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary-teal/10 dark:bg-dark-teal/10 flex items-center justify-center text-primary-teal dark:text-dark-teal font-bold text-sm sm:text-base">
+                        MBA
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-base sm:text-lg font-bold text-primary-navy dark:text-white mb-1.5">
+                          Strategic Management
+                        </h3>
+                        <p className="text-sm sm:text-base text-primary-teal dark:text-dark-teal">
+                          United States International University
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="card hover:shadow-lg transition-all duration-300 border-l-4 border-primary-teal">
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary-teal/10 dark:bg-dark-teal/10 flex items-center justify-center text-primary-teal dark:text-dark-teal font-bold text-sm sm:text-base">
+                        MA
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-base sm:text-lg font-bold text-primary-navy dark:text-white mb-1.5">
+                          International Marketing & Media Management
+                        </h3>
+                        <p className="text-sm sm:text-base text-primary-teal dark:text-dark-teal">
+                          Media University of Applied Science Berlin, Germany
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="card hover:shadow-lg transition-all duration-300 border-l-4 border-primary-teal">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary-teal/10 dark:bg-dark-teal/10 flex items-center justify-center text-primary-teal dark:text-dark-teal font-bold text-sm sm:text-base">
-                      MBA
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-base sm:text-lg font-bold text-primary-navy dark:text-white mb-1.5">
-                        Strategic Management
-                      </h3>
-                      <p className="text-sm sm:text-base text-primary-teal dark:text-dark-teal">
-                        United States International University
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="card hover:shadow-lg transition-all duration-300 border-l-4 border-primary-teal">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary-teal/10 dark:bg-dark-teal/10 flex items-center justify-center text-primary-teal dark:text-dark-teal font-bold text-sm sm:text-base">
-                      MA
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-base sm:text-lg font-bold text-primary-navy dark:text-white mb-1.5">
-                        International Marketing & Media Management
-                      </h3>
-                      <p className="text-sm sm:text-base text-primary-teal dark:text-dark-teal">
-                        Media University of Applied Science Berlin, Germany
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
+                {/* Certifications */}
                 <div className="card hover:shadow-lg transition-all duration-300 bg-primary-navy/5 dark:bg-dark-surface/50">
                   <h3 className="text-base sm:text-lg font-bold text-primary-navy dark:text-white mb-3 sm:mb-4 flex items-center gap-2">
                     <FiCheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-primary-teal" />
@@ -405,6 +411,10 @@ export default function ProfessionalExpertise() {
         }
         .animate-scroll-fast {
           animation: scroll-fast 15s linear infinite;
+        }
+        /* Hide scrollbar in WebKit */
+        div[class*="overflow-x-auto"]::-webkit-scrollbar {
+          display: none;
         }
       `}</style>
     </div>
