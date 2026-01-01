@@ -1,9 +1,10 @@
 'use client';
 
-import { ReactNode } from 'react';
+import { ReactNode, useEffect, useRef, useState } from 'react';
 import { HiOutlineLightBulb, HiOutlineChartBar, HiOutlineGlobeAlt } from 'react-icons/hi';
 import { FiCpu } from 'react-icons/fi';
 import { BsPeople } from 'react-icons/bs';
+import { useInView } from 'framer-motion';
 import SectionFadeIn from './SectionFadeIn';
 
 type AboutItem = {
@@ -16,6 +17,7 @@ type StatItem = {
   label: string;
   value: string;
   icon: ReactNode;
+  numericValue: number;
 };
 
 const aboutItems: AboutItem[] = [
@@ -49,19 +51,57 @@ const stats: StatItem[] = [
   {
     label: 'Years in transformation',
     value: '8+',
+    numericValue: 8,
     icon: <HiOutlineChartBar className="w-5 h-5" />,
   },
   {
     label: 'Teams enabled',
     value: '50+',
+    numericValue: 50,
     icon: <BsPeople className="w-5 h-5" />,
   },
   {
     label: 'Projects delivered',
     value: '25+',
+    numericValue: 25,
     icon: <FiCpu className="w-5 h-5" />,
   },
 ];
+
+// Counter component with count-up animation
+function CountUpNumber({ end, suffix = '' }: { end: number; suffix?: string }) {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    let startTime: number | null = null;
+    const duration = 2000; // 2 seconds
+
+    const animate = (currentTime: number) => {
+      if (!startTime) startTime = currentTime;
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      
+      // Easing function for smooth animation
+      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+      setCount(Math.floor(easeOutQuart * end));
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+
+    requestAnimationFrame(animate);
+  }, [isInView, end]);
+
+  return (
+    <span ref={ref}>
+      {count}{suffix}
+    </span>
+  );
+}
 
 export default function AboutSection() {
   return (
@@ -122,7 +162,7 @@ export default function AboutSection() {
             ))}
           </div>
 
-          {/* Stats row */}
+          {/* Stats row with count-up animation */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 max-w-3xl mx-auto">
             {stats.map((stat) => (
               <div
@@ -134,7 +174,7 @@ export default function AboutSection() {
                 </div>
                 <div>
                   <p className="text-lg sm:text-xl font-bold text-primary-navy dark:text-white leading-tight">
-                    {stat.value}
+                    <CountUpNumber end={stat.numericValue} suffix="+" />
                   </p>
                   <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300">
                     {stat.label}
