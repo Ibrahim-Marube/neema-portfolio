@@ -1,10 +1,10 @@
 'use client';
 
 import { ReactNode, useEffect, useRef, useState } from 'react';
-import { HiOutlineLightBulb, HiOutlineChartBar, HiOutlineGlobeAlt } from 'react-icons/hi';
-import { FiCpu } from 'react-icons/fi';
+import { motion, useInView } from 'framer-motion';
+import { HiOutlineLightBulb, HiOutlineChartBar, HiOutlineGlobeAlt, HiOutlineSparkles } from 'react-icons/hi';
+import { FiCpu, FiBookOpen, FiMapPin } from 'react-icons/fi';
 import { BsPeople } from 'react-icons/bs';
-import { useInView } from 'framer-motion';
 import SectionFadeIn from './SectionFadeIn';
 
 type AboutItem = {
@@ -78,13 +78,12 @@ function CountUpNumber({ end, suffix = '' }: { end: number; suffix?: string }) {
     if (!isInView) return;
 
     let startTime: number | null = null;
-    const duration = 2000; // 2 seconds
+    const duration = 2000;
 
     const animate = (currentTime: number) => {
       if (!startTime) startTime = currentTime;
       const progress = Math.min((currentTime - startTime) / duration, 1);
       
-      // Easing function for smooth animation
       const easeOutQuart = 1 - Math.pow(1 - progress, 4);
       setCount(Math.floor(easeOutQuart * end));
 
@@ -103,12 +102,42 @@ function CountUpNumber({ end, suffix = '' }: { end: number; suffix?: string }) {
   );
 }
 
+// Simple text reveal variant
+const textVariant = {
+  hidden: { opacity: 0, y: 16 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, delay: 0.1 * i, ease: 'easeOut' },
+  }),
+};
+
+// Card variant
+const cardVariant = {
+  hidden: { opacity: 0, y: 24, scale: 0.98 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.5, delay: 0.1 * i, ease: 'easeOut' },
+  }),
+};
+
 export default function AboutSection() {
+  const sectionRef = useRef(null);
+  const inView = useInView(sectionRef, { once: true, amount: 0.25 });
+
   return (
     <SectionFadeIn className="relative bg-white dark:bg-dark-surface py-12 sm:py-16 lg:py-20 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div ref={sectionRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Centered main title + subtitle */}
-        <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-12">
+        <motion.div
+          initial="hidden"
+          animate={inView ? 'visible' : 'hidden'}
+          variants={textVariant}
+          custom={0}
+          className="max-w-3xl mx-auto text-center mb-10 sm:mb-12"
+        >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-navy dark:text-white mb-3">
             About Me
           </h2>
@@ -118,12 +147,17 @@ export default function AboutSection() {
           </p>
 
           <div className="h-1 w-20 bg-gradient-to-r from-primary-teal to-primary-navy rounded-full mx-auto" />
-        </div>
+        </motion.div>
 
-        {/* Single column layout for better balance */}
         <div className="max-w-5xl mx-auto space-y-8">
-          {/* Quote + intro */}
-          <div className="space-y-6">
+          {/* Quote + intro + personal blend */}
+          <motion.div
+            initial="hidden"
+            animate={inView ? 'visible' : 'hidden'}
+            variants={textVariant}
+            custom={1}
+            className="space-y-6"
+          >
             <blockquote className="relative pl-4 sm:pl-5 border-l-2 border-primary-teal/70 dark:border-dark-teal/70">
               <span className="absolute -top-3 left-1 text-4xl text-primary-teal/20 select-none">
                 "
@@ -136,37 +170,109 @@ export default function AboutSection() {
             <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300">
               I work at the intersection of business, technology, and people, helping organizations translate strategy into practical digital solutions.
             </p>
-          </div>
 
-          {/* Cards grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            {aboutItems.map((item) => (
-              <div
-                key={item.title}
-                className="group rounded-xl border border-gray-100 dark:border-white/10 bg-white/80 dark:bg-dark-card/80 backdrop-blur-sm p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow"
-              >
-                <div className="flex flex-col items-start gap-3">
-                  <div className="flex-shrink-0 w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-primary-teal/10 dark:bg-dark-teal/10 flex items-center justify-center text-primary-teal dark:text-dark-teal">
-                    {item.icon}
+            {/* Personal motto blended in */}
+            <motion.div
+              variants={textVariant}
+              custom={2}
+              className="relative pl-4 sm:pl-5 border-l-2 border-purple-500/50 dark:border-purple-400/50 bg-gradient-to-r from-purple-50/50 to-transparent dark:from-purple-900/10 dark:to-transparent rounded-r-lg py-4 pr-4"
+            >
+              <div className="flex items-start gap-3 mb-2">
+                <HiOutlineSparkles className="w-5 h-5 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-1" />
+                <p className="text-lg sm:text-xl font-bold text-primary-navy dark:text-white italic">
+                  "Today, I strive to be better than I was yesterday."
+                </p>
+              </div>
+              <p className="text-sm text-gray-600 dark:text-gray-300 ml-8">
+                This constant pursuit for improvement drives me to approach every challenge with curiosity, determination, and purpose.
+              </p>
+            </motion.div>
+
+            {/* Who I am */}
+            <motion.p
+              variants={textVariant}
+              custom={3}
+              className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed"
+            >
+              I am a blend of <span className="font-semibold text-primary-teal dark:text-dark-teal">choleric drive</span> and <span className="font-semibold text-primary-teal dark:text-dark-teal">melancholic reflection</span>—someone who is ambitious, determined, and goal-oriented, yet thoughtful and introspective. This combination fuels my passion for growth and learning.
+            </motion.p>
+
+            {/* What drives me */}
+            <motion.div
+              variants={textVariant}
+              custom={4}
+              className="space-y-3 pt-2"
+            >
+              <p className="text-sm font-semibold text-primary-navy dark:text-white mb-3">
+                I thrive on:
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-primary-teal/10 dark:bg-dark-teal/10 flex items-center justify-center">
+                    <BsPeople className="w-4 h-4 text-primary-teal dark:text-dark-teal" />
                   </div>
-                  <div>
-                    <h3 className="text-sm sm:text-base font-semibold text-primary-navy dark:text-white mb-1.5">
-                      {item.title}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                      {item.description}
-                    </p>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">
+                    Creating new connections
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-primary-teal/10 dark:bg-dark-teal/10 flex items-center justify-center">
+                    <FiMapPin className="w-4 h-4 text-primary-teal dark:text-dark-teal" />
                   </div>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">
+                    Exploring new places
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-primary-teal/10 dark:bg-dark-teal/10 flex items-center justify-center">
+                    <FiBookOpen className="w-4 h-4 text-primary-teal dark:text-dark-teal" />
+                  </div>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">
+                    Challenging perspectives
+                  </p>
                 </div>
               </div>
+            </motion.div>
+          </motion.div>
+
+          {/* Cards grid with motion */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 pt-4">
+            {aboutItems.map((item, index) => (
+              <motion.div
+                key={item.title}
+                variants={cardVariant}
+                initial="hidden"
+                animate={inView ? 'visible' : 'hidden'}
+                custom={index}
+              >
+                <div className="group rounded-xl border border-gray-100 dark:border-white/10 bg-white/80 dark:bg-dark-card/80 backdrop-blur-sm p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow">
+                  <div className="flex flex-col items-start gap-3">
+                    <div className="flex-shrink-0 w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-primary-teal/10 dark:bg-dark-teal/10 flex items-center justify-center text-primary-teal dark:text-dark-teal">
+                      {item.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-sm sm:text-base font-semibold text-primary-navy dark:text-white mb-1.5">
+                        {item.title}
+                      </h3>
+                      <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
             ))}
           </div>
 
-          {/* Stats row with count-up animation */}
+          {/* Stats row with motion */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 max-w-3xl mx-auto">
-            {stats.map((stat) => (
-              <div
+            {stats.map((stat, index) => (
+              <motion.div
                 key={stat.label}
+                variants={cardVariant}
+                initial="hidden"
+                animate={inView ? 'visible' : 'hidden'}
+                custom={aboutItems.length + index}
                 className="rounded-xl border border-gray-100 dark:border-white/10 bg-white/80 dark:bg-dark-card/80 backdrop-blur-sm p-4 sm:p-5 flex items-center gap-3"
               >
                 <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-primary-teal/10 dark:bg-dark-teal/10 flex items-center justify-center text-primary-teal dark:text-dark-teal">
@@ -180,7 +286,7 @@ export default function AboutSection() {
                     {stat.label}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

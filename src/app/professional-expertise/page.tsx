@@ -1,9 +1,9 @@
 'use client';
 
 import { HiOutlineChartBar, HiOutlineLightBulb, HiOutlineGlobeAlt } from 'react-icons/hi';
-import { FiCpu, FiUsers, FiTrendingUp, FiCheckCircle, FiBarChart2 } from 'react-icons/fi';
+import { FiCpu, FiUsers, FiTrendingUp, FiCheckCircle } from 'react-icons/fi';
 import { BsPeople, BsGraphUp, BsLightning } from 'react-icons/bs';
-import { MdOutlineAnalytics, MdOutlineDesignServices, MdBarChart, MdShowChart } from 'react-icons/md';
+import { MdOutlineAnalytics, MdOutlineDesignServices } from 'react-icons/md';
 import SectionFadeIn from '@/components/SectionFadeIn';
 
 export default function ProfessionalExpertise() {
@@ -74,40 +74,39 @@ export default function ProfessionalExpertise() {
   ];
 
   const tools = [
-    { name: 'Power BI', category: 'Data Visualization', icon: <MdBarChart className="w-8 h-8" /> },
-    { name: 'Google Analytics', category: 'Analytics', icon: <MdShowChart className="w-8 h-8" /> },
-    { name: 'MS Excel', category: 'Data Analysis', icon: <HiOutlineChartBar className="w-8 h-8" /> },
-    { name: 'SPSS', category: 'Statistics', icon: <FiBarChart2 className="w-8 h-8" /> },
-    { name: 'Asana', category: 'Project Management', icon: <FiCheckCircle className="w-8 h-8" /> },
-    { name: 'MS Project', category: 'Project Management', icon: <FiCpu className="w-8 h-8" /> },
-    { name: 'Hootsuite', category: 'Marketing', icon: <HiOutlineGlobeAlt className="w-8 h-8" /> },
-    { name: 'Sprout Social', category: 'Marketing', icon: <BsGraphUp className="w-8 h-8" /> },
+    { name: 'Power BI', category: 'Data Visualization' },
+    { name: 'Google Analytics', category: 'Analytics' },
+    { name: 'MS Excel', category: 'Data Analysis' },
+    { name: 'SPSS', category: 'Statistics' },
+    { name: 'Asana', category: 'Project Management' },
+    { name: 'MS Project', category: 'Project Management' },
+    { name: 'Hootsuite', category: 'Marketing' },
+    { name: 'Sprout Social', category: 'Marketing' }
   ];
 
   return (
     <div className="relative bg-white dark:bg-dark-bg min-h-screen overflow-hidden">
-      {/* Background decorative elements */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 right-0 w-96 h-96 bg-primary-teal rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-0 w-96 h-96 bg-primary-navy rounded-full blur-3xl"></div>
+        <div className="absolute top-20 right-0 w-72 sm:w-96 h-72 sm:h-96 bg-primary-teal rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-0 w-72 sm:w-96 h-72 sm:h-96 bg-primary-navy rounded-full blur-3xl"></div>
       </div>
 
-      <div className="relative z-10 section-padding">
-        <div className="max-w-7xl mx-auto">
-          {/* Hero Section */}
+      <div className="relative z-10 section-padding pt-8 sm:pt-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          {/* Hero */}
           <SectionFadeIn>
-            <div className="text-center mb-12 sm:mb-16">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-primary-teal to-primary-navy mb-6">
-                <HiOutlineLightBulb className="w-8 h-8 text-white" />
+            <div className="text-center mb-10 sm:mb-14">
+              <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-primary-teal to-primary-navy mb-5 sm:mb-6">
+                <HiOutlineLightBulb className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
               </div>
               
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-primary-navy dark:text-white">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-primary-navy dark:text-white leading-tight">
                 Professional Expertise
               </h1>
               
-              <div className="h-1 w-20 bg-gradient-to-r from-primary-teal to-primary-navy rounded-full mx-auto mb-6"></div>
+              <div className="h-1 w-16 sm:w-20 bg-gradient-to-r from-primary-teal to-primary-navy rounded-full mx-auto mb-4"></div>
               
-              <p className="text-base sm:text-lg text-primary-gray dark:text-dark-text max-w-3xl mx-auto leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-primary-gray dark:text-dark-text max-w-3xl mx-auto leading-relaxed">
                 With 8+ years of experience in digital transformation and business analysis, 
                 I bring a strategic, data-driven approach to solving complex organizational challenges 
                 and delivering measurable results.
@@ -117,28 +116,28 @@ export default function ProfessionalExpertise() {
 
           {/* Core Expertise */}
           <SectionFadeIn>
-            <section className="mb-16 sm:mb-20">
-              <div className="text-center mb-10">
-                <h2 className="text-3xl sm:text-4xl font-bold mb-3 text-primary-navy dark:text-white">
+            <section className="mb-12 sm:mb-16">
+              <div className="text-center mb-8 sm:mb-10">
+                <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-primary-navy dark:text-white">
                   Core Expertise
                 </h2>
-                <p className="text-base text-primary-gray dark:text-dark-text max-w-2xl mx-auto">
+                <p className="text-sm sm:text-base text-primary-gray dark:text-dark-text max-w-2xl mx-auto">
                   Strategic capabilities that drive organizational transformation
                 </p>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 {coreExpertise.map((item, idx) => (
                   <div
                     key={idx}
-                    className="group card hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                    className="card hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
                   >
-                    <div className="flex items-start gap-4 mb-3">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary-teal/10 dark:bg-dark-teal/10 flex items-center justify-center text-primary-teal dark:text-dark-teal group-hover:scale-110 transition-transform">
+                    <div className="flex items-start gap-3 sm:gap-4 mb-2 sm:mb-3">
+                      <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary-teal/10 dark:bg-dark-teal/10 flex items-center justify-center text-primary-teal dark:text-dark-teal">
                         {item.icon}
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-lg sm:text-xl font-bold text-primary-navy dark:text-white mb-2">
+                        <h3 className="text-base sm:text-lg font-bold text-primary-navy dark:text-white mb-1">
                           {item.title}
                         </h3>
                       </div>
@@ -152,30 +151,30 @@ export default function ProfessionalExpertise() {
             </section>
           </SectionFadeIn>
 
-          {/* Skills & Capabilities */}
+          {/* Skills */}
           <SectionFadeIn>
-            <section className="mb-16 sm:mb-20">
-              <div className="text-center mb-10">
-                <h2 className="text-3xl sm:text-4xl font-bold mb-3 text-primary-navy dark:text-white">
+            <section className="mb-12 sm:mb-16">
+              <div className="text-center mb-8 sm:mb-10">
+                <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-primary-navy dark:text-white">
                   Skills & Capabilities
                 </h2>
-                <p className="text-base text-primary-gray dark:text-dark-text max-w-2xl mx-auto">
+                <p className="text-sm sm:text-base text-primary-gray dark:text-dark-text max-w-2xl mx-auto">
                   Technical and analytical skills that enable practical solutions
                 </p>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 {skills.map((item, idx) => (
                   <div
                     key={idx}
-                    className="group card hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                    className="card hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
                   >
-                    <div className="flex items-start gap-4 mb-3">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary-teal/10 dark:bg-dark-teal/10 flex items-center justify-center text-primary-teal dark:text-dark-teal group-hover:scale-110 transition-transform">
+                    <div className="flex items-start gap-3 sm:gap-4 mb-2 sm:mb-3">
+                      <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary-teal/10 dark:bg-dark-teal/10 flex items-center justify-center text-primary-teal dark:text-dark-teal">
                         {item.icon}
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-lg sm:text-xl font-bold text-primary-navy dark:text-white mb-2">
+                        <h3 className="text-base sm:text-lg font-bold text-primary-navy dark:text-white mb-1">
                           {item.title}
                         </h3>
                       </div>
@@ -189,37 +188,31 @@ export default function ProfessionalExpertise() {
             </section>
           </SectionFadeIn>
 
-          {/* Tools & Technologies - Horizontal Scroll */}
+          {/* Tools & Technologies */}
           <SectionFadeIn>
-            <section className="mb-16 sm:mb-20">
-              <div className="text-center mb-10">
-                <h2 className="text-3xl sm:text-4xl font-bold mb-3 text-primary-navy dark:text-white">
+            <section className="mb-12 sm:mb-16">
+              <div className="text-center mb-8 sm:mb-10">
+                <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-primary-navy dark:text-white">
                   Tools & Technologies
                 </h2>
-                <p className="text-base text-primary-gray dark:text-dark-text max-w-2xl mx-auto">
+                <p className="text-sm sm:text-base text-primary-gray dark:text-dark-text max-w-2xl mx-auto">
                   Platforms and software I use to deliver results
                 </p>
               </div>
               
               <div className="relative">
-                {/* Gradient overlays for fade effect */}
-                <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white dark:from-dark-bg to-transparent z-10 pointer-events-none"></div>
-                <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white dark:from-dark-bg to-transparent z-10 pointer-events-none"></div>
+                <div className="hidden sm:block absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white dark:from-dark-bg to-transparent z-10 pointer-events-none"></div>
+                <div className="hidden sm:block absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white dark:from-dark-bg to-transparent z-10 pointer-events-none"></div>
                 
-                {/* Scrolling container */}
-                <div className="overflow-hidden">
-                  <div className="flex animate-scroll">
-                    {/* Duplicate the array for seamless loop */}
+                <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-primary-teal/40 scrollbar-track-transparent">
+                  <div className="flex gap-3 sm:gap-4 py-2 px-1 animate-scroll-fast">
                     {[...tools, ...tools].map((tool, idx) => (
                       <div
                         key={idx}
-                        className="flex-shrink-0 mx-4 group"
+                        className="flex-shrink-0 w-40 sm:w-44"
                       >
-                        <div className="card w-40 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                          <div className="w-16 h-16 mx-auto mb-3 rounded-lg bg-primary-teal/10 dark:bg-dark-teal/10 flex items-center justify-center text-primary-teal dark:text-dark-teal group-hover:scale-110 transition-transform">
-                            {tool.icon}
-                          </div>
-                          <p className="font-bold text-primary-navy dark:text-white mb-1 text-sm">
+                        <div className="card text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                          <p className="font-bold text-primary-navy dark:text-white mb-1 text-sm sm:text-base">
                             {tool.name}
                           </p>
                           <p className="text-xs text-primary-gray dark:text-dark-text">
@@ -236,37 +229,28 @@ export default function ProfessionalExpertise() {
 
           {/* Languages */}
           <SectionFadeIn>
-            <section className="mb-16 sm:mb-20">
-              <div className="text-center mb-10">
-                <h2 className="text-3xl sm:text-4xl font-bold mb-3 text-primary-navy dark:text-white">
+            <section className="mb-12 sm:mb-16">
+              <div className="text-center mb-8 sm:mb-10">
+                <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-primary-navy dark:text-white">
                   Languages
                 </h2>
-                <p className="text-base text-primary-gray dark:text-dark-text max-w-2xl mx-auto">
+                <p className="text-sm sm:text-base text-primary-gray dark:text-dark-text max-w-2xl mx-auto">
                   Enabling effective communication across global teams
                 </p>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 max-w-4xl mx-auto">
                 <div className="card text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                  <div className="w-12 h-12 rounded-full bg-primary-teal/10 dark:bg-dark-teal/10 flex items-center justify-center text-primary-teal dark:text-dark-teal mx-auto mb-3">
-                    <HiOutlineGlobeAlt className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-xl font-bold text-primary-navy dark:text-white mb-1">Swahili</h3>
-                  <p className="text-primary-teal dark:text-dark-teal font-medium">Native</p>
+                  <h3 className="text-lg sm:text-xl font-bold text-primary-navy dark:text-white mb-1">Swahili</h3>
+                  <p className="text-primary-teal dark:text-dark-teal font-medium text-sm sm:text-base">Native</p>
                 </div>
                 <div className="card text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                  <div className="w-12 h-12 rounded-full bg-primary-teal/10 dark:bg-dark-teal/10 flex items-center justify-center text-primary-teal dark:text-dark-teal mx-auto mb-3">
-                    <HiOutlineGlobeAlt className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-xl font-bold text-primary-navy dark:text-white mb-1">English</h3>
-                  <p className="text-primary-teal dark:text-dark-teal font-medium">Native</p>
+                  <h3 className="text-lg sm:text-xl font-bold text-primary-navy dark:text-white mb-1">English</h3>
+                  <p className="text-primary-teal dark:text-dark-teal font-medium text-sm sm:text-base">Native</p>
                 </div>
                 <div className="card text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                  <div className="w-12 h-12 rounded-full bg-primary-teal/10 dark:bg-dark-teal/10 flex items-center justify-center text-primary-teal dark:text-dark-teal mx-auto mb-3">
-                    <HiOutlineGlobeAlt className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-xl font-bold text-primary-navy dark:text-white mb-1">German</h3>
-                  <p className="text-primary-teal dark:text-dark-teal font-medium">B1 (Improving)</p>
+                  <h3 className="text-lg sm:text-xl font-bold text-primary-navy dark:text-white mb-1">German</h3>
+                  <p className="text-primary-teal dark:text-dark-teal font-medium text-sm sm:text-base">B1 (Improving)</p>
                 </div>
               </div>
             </section>
@@ -275,26 +259,26 @@ export default function ProfessionalExpertise() {
           {/* Education & Certifications */}
           <SectionFadeIn>
             <section className="mb-16">
-              <div className="text-center mb-10">
-                <h2 className="text-3xl sm:text-4xl font-bold mb-3 text-primary-navy dark:text-white">
+              <div className="text-center mb-8 sm:mb-10">
+                <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-primary-navy dark:text-white">
                   Education & Certifications
                 </h2>
-                <p className="text-base text-primary-gray dark:text-dark-text max-w-2xl mx-auto">
+                <p className="text-sm sm:text-base text-primary-gray dark:text-dark-text max-w-2xl mx-auto">
                   Academic foundation and professional credentials
                 </p>
               </div>
               
-              <div className="space-y-6 max-w-4xl mx-auto">
+              <div className="space-y-5 sm:space-y-6 max-w-4xl mx-auto">
                 <div className="card hover:shadow-lg transition-all duration-300 border-l-4 border-primary-teal">
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary-teal/10 dark:bg-dark-teal/10 flex items-center justify-center text-primary-teal dark:text-dark-teal font-bold">
+                    <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary-teal/10 dark:bg-dark-teal/10 flex items-center justify-center text-primary-teal dark:text-dark-teal font-bold text-sm sm:text-base">
                       BSc
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-lg sm:text-xl font-bold text-primary-navy dark:text-white mb-2">
+                      <h3 className="text-base sm:text-lg font-bold text-primary-navy dark:text-white mb-1.5">
                         International Business Administration - Information Systems Management
                       </h3>
-                      <p className="text-primary-teal dark:text-dark-teal font-medium">
+                      <p className="text-sm sm:text-base text-primary-teal dark:text-dark-teal">
                         United States International University
                       </p>
                     </div>
@@ -303,14 +287,14 @@ export default function ProfessionalExpertise() {
 
                 <div className="card hover:shadow-lg transition-all duration-300 border-l-4 border-primary-teal">
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary-teal/10 dark:bg-dark-teal/10 flex items-center justify-center text-primary-teal dark:text-dark-teal font-bold">
+                    <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary-teal/10 dark:bg-dark-teal/10 flex items-center justify-center text-primary-teal dark:text-dark-teal font-bold text-sm sm:text-base">
                       MBA
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-lg sm:text-xl font-bold text-primary-navy dark:text-white mb-2">
+                      <h3 className="text-base sm:text-lg font-bold text-primary-navy dark:text-white mb-1.5">
                         Strategic Management
                       </h3>
-                      <p className="text-primary-teal dark:text-dark-teal font-medium">
+                      <p className="text-sm sm:text-base text-primary-teal dark:text-dark-teal">
                         United States International University
                       </p>
                     </div>
@@ -319,14 +303,14 @@ export default function ProfessionalExpertise() {
 
                 <div className="card hover:shadow-lg transition-all duration-300 border-l-4 border-primary-teal">
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary-teal/10 dark:bg-dark-teal/10 flex items-center justify-center text-primary-teal dark:text-dark-teal font-bold">
+                    <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary-teal/10 dark:bg-dark-teal/10 flex items-center justify-center text-primary-teal dark:text-dark-teal font-bold text-sm sm:text-base">
                       MA
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-lg sm:text-xl font-bold text-primary-navy dark:text-white mb-2">
+                      <h3 className="text-base sm:text-lg font-bold text-primary-navy dark:text-white mb-1.5">
                         International Marketing & Media Management
                       </h3>
-                      <p className="text-primary-teal dark:text-dark-teal font-medium">
+                      <p className="text-sm sm:text-base text-primary-teal dark:text-dark-teal">
                         Media University of Applied Science Berlin, Germany
                       </p>
                     </div>
@@ -334,30 +318,42 @@ export default function ProfessionalExpertise() {
                 </div>
 
                 <div className="card hover:shadow-lg transition-all duration-300 bg-primary-navy/5 dark:bg-dark-surface/50">
-                  <h3 className="text-lg sm:text-xl font-bold text-primary-navy dark:text-white mb-4 flex items-center gap-2">
-                    <FiCheckCircle className="w-6 h-6 text-primary-teal" />
+                  <h3 className="text-base sm:text-lg font-bold text-primary-navy dark:text-white mb-3 sm:mb-4 flex items-center gap-2">
+                    <FiCheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-primary-teal" />
                     Professional Certifications
                   </h3>
                   <ul className="space-y-3">
                     <li className="flex items-start gap-3">
                       <span className="flex-shrink-0 w-2 h-2 rounded-full bg-primary-teal mt-2"></span>
                       <div>
-                        <p className="font-semibold text-primary-navy dark:text-white">Digital Marketing (CDMP)</p>
-                        <p className="text-sm text-primary-gray dark:text-dark-text">Digital Marketing Institute, Ireland</p>
+                        <p className="font-semibold text-sm sm:text-base text-primary-navy dark:text-white">
+                          Digital Marketing (CDMP)
+                        </p>
+                        <p className="text-xs sm:text-sm text-primary-gray dark:text-dark-text">
+                          Digital Marketing Institute, Ireland
+                        </p>
                       </div>
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="flex-shrink-0 w-2 h-2 rounded-full bg-primary-teal mt-2"></span>
                       <div>
-                        <p className="font-semibold text-primary-navy dark:text-white">Professional Marketing in Digital Strategy (ACIM)</p>
-                        <p className="text-sm text-primary-gray dark:text-dark-text">Chartered Institute of Marketing, UK</p>
+                        <p className="font-semibold text-sm sm:text-base text-primary-navy dark:text-white">
+                          Professional Marketing in Digital Strategy (ACIM)
+                        </p>
+                        <p className="text-xs sm:text-sm text-primary-gray dark:text-dark-text">
+                          Chartered Institute of Marketing, UK
+                        </p>
                       </div>
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="flex-shrink-0 w-2 h-2 rounded-full bg-primary-teal mt-2"></span>
                       <div>
-                        <p className="font-semibold text-primary-navy dark:text-white">Business Intelligence with Power BI</p>
-                        <p className="text-sm text-primary-gray dark:text-dark-text">Strathmore University, Kenya</p>
+                        <p className="font-semibold text-sm sm:text-base text-primary-navy dark:text-white">
+                          Business Intelligence with Power BI
+                        </p>
+                        <p className="text-xs sm:text-sm text-primary-gray dark:text-dark-text">
+                          Strathmore University, Kenya
+                        </p>
                       </div>
                     </li>
                   </ul>
@@ -368,42 +364,38 @@ export default function ProfessionalExpertise() {
 
           {/* CTA Section */}
           <SectionFadeIn>
-            <div className="text-center py-12 px-6 rounded-2xl bg-gradient-to-br from-primary-teal/10 to-primary-navy/10 dark:from-dark-teal/10 dark:to-primary-navy/20 border border-primary-teal/20 dark:border-dark-teal/20">
-              <h3 className="text-2xl sm:text-3xl font-bold mb-4 text-primary-navy dark:text-white">
-                Let's Work Together
-              </h3>
-              <p className="text-base sm:text-lg text-primary-gray dark:text-dark-text mb-6 max-w-2xl mx-auto">
-                Ready to transform your organization with data-driven strategies and digital solutions?
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-primary-teal hover:bg-primary-teal/90 text-white rounded-lg font-semibold transition-all hover:shadow-lg"
-                >
-                  Get In Touch
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </a>
-                <a
-                  href="https://calendly.com/neemakemunto/15min"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-white dark:bg-dark-surface border-2 border-primary-teal text-primary-teal hover:bg-primary-teal/5 rounded-lg font-semibold transition-all"
-                >
-                  Schedule a Call
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                </a>
+            <section className="mb-10 sm:mb-16">
+              <div className="text-center py-8 sm:py-10 px-4 sm:px-6 rounded-2xl bg-gradient-to-br from-primary-teal/10 to-primary-navy/10 dark:from-dark-teal/10 dark:to-primary-navy/20 border border-primary-teal/20 dark:border-dark-teal/20 max-w-4xl mx-auto">
+                <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-primary-navy dark:text-white">
+                  Let's Work Together
+                </h3>
+                <p className="text-sm sm:text-base md:text-lg text-primary-gray dark:text-dark-text mb-5 sm:mb-6 max-w-2xl mx-auto">
+                  Ready to transform your organization with data-driven strategies and digital solutions?
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
+                  <a
+                    href="/contact"
+                    className="btn-primary"
+                  >
+                    Get In Touch
+                  </a>
+                  <a
+                    href="https://calendly.com/neemakemunto/15min"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-secondary"
+                  >
+                    Schedule a Call
+                  </a>
+                </div>
               </div>
-            </div>
+            </section>
           </SectionFadeIn>
         </div>
       </div>
 
       <style jsx>{`
-        @keyframes scroll {
+        @keyframes scroll-fast {
           0% {
             transform: translateX(0);
           }
@@ -411,13 +403,8 @@ export default function ProfessionalExpertise() {
             transform: translateX(-50%);
           }
         }
-
-        .animate-scroll {
-          animation: scroll 30s linear infinite;
-        }
-
-        .animate-scroll:hover {
-          animation-play-state: paused;
+        .animate-scroll-fast {
+          animation: scroll-fast 15s linear infinite;
         }
       `}</style>
     </div>

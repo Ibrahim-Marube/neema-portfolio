@@ -1,10 +1,9 @@
 import Hero from '@/components/Hero';
-import LogoBar from '@/components/LogoBar';
-import CaseStudyCard from '@/components/CaseStudyCard';
 import AboutSection from '@/components/AboutSection';
-import InspirationSection from '@/components/InspirationSection';
+import HowIWork from '@/components/HowIWork';
 import FeaturedProjects from '@/components/FeaturedProjects';
-import { caseStudies } from '@/lib/caseStudies';
+import InspirationSection from '@/components/InspirationSection';
+import LogoBar from '@/components/LogoBar';
 
 export default function Home() {
   return (
@@ -13,9 +12,11 @@ export default function Home() {
       
       <AboutSection />
 
-      <InspirationSection />
+      <HowIWork />
 
       <FeaturedProjects />
+
+      <InspirationSection />
 
       <LogoBar />
     </>
