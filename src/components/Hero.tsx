@@ -7,9 +7,9 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="relative py-16 sm:py-20 md:py-24 lg:py-28 pb-20 sm:pb-24 md:pb-28 bg-gradient-to-br from-primary-lightgray to-white dark:from-dark-bg dark:to-dark-surface">
+    <section className="relative py-14 sm:py-16 md:py-20 lg:py-24 pb-12 sm:pb-14 md:pb-16 bg-gradient-to-br from-primary-lightgray to-white dark:from-dark-bg dark:to-dark-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full">
-        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-14">
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-10">
           {/* Left: Text */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -103,7 +103,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 0.6 }}
-        className="hidden md:flex absolute bottom-6 left-1/2 -translate-x-1/2 flex-col items-center gap-2"
+        className="hidden md:flex absolute bottom-3 left-1/2 -translate-x-1/2 flex-col items-center gap-1.5"
       >
         <div className="w-6 h-10 border-2 border-primary-teal/40 dark:border-dark-teal/40 rounded-full p-1 flex justify-center">
           <motion.div
